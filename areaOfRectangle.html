@@ -2,77 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Area of Rect</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
     <div class="content">
-        <h3>Area of Rectangle Calculator</h3>
+        <h3>Area of Rect Calculator</h3>
         <div class="row">
             <div>
-                <label for="l">l</label>
-                <input type="text" id="l" name="l" style="width: 100px;">
+                <label for="a">length</label>
+                <input type="text" id="a" name="a" style="width: 100px;">
             </div>
+
             <div>
-                <label for="w">w</label>
-                <input type="text" id="w" name="w" style="width: 100px;">
+                <label for="b">width</label>
+                <input type="text" id="b" name="b" style="width: 100px;">
             </div>
         </div>
-        <button id="calc">Calculate</button>
-        <button id="clear">Clear</button>
-        <p class="hidden"></p>
+        <div>
+            <button id="calc">Calculate</button>
+            <button id="clear">Clear</button>
+        </div>
+        <p></p>
+
     </div>
 </div>
 <script>
-    const l = document.getElementById('l');
-    const w = document.getElementById('w');
-    const ans = document.querySelector('p');
+    const a = document.getElementById('a');
+    const b = document.getElementById('b');
+    const ans = document.querySelector('p')
     const calculateButton = document.getElementById('calc');
-    const clearButton = document.getElementById('clear')
+    const clearButton = document.getElementById('clear');
+    function areaOfRect(num1, num2){
+        return(num1 * num2);
 
-    function areaOfRect(num1, num2) {
-        let Area = (num1 * num2)
 
-
-        if (Area) {
-            return true;
-        }
-        return false;
     }
+    calculateButton.addEventListener('click', function(e) {
+        let length = +a.value;
+        let width = +b.value;
 
-    function checkIsValid(num){
-        if (isNaN(num)){
+
+        if (!checkIsValid(length) || !checkIsValid(width)) {
+            ans.textContent = 'Invalid Inputs';
+            return;
+        }
+        ans.textContent = areaOfRect(length, width);
+    })
+
+    clearButton.addEventListener('click', function (e) {
+        a.value = " ";
+        b.value = " ";
+        ans.textContent = " ";
+    })
+
+    function checkIsValid(num) {
+        if (isNaN(num)) {
             return false
         }
-        if (num <= 0){
+        if (num <= 0) {
             return false
         }
         return true
     }
-
-    calculateButton.addEventListener('click', function (e){
-        let l = +a.value;
-        let w = +b.value;
-        ans.classList.remove("hidden");
-        if (!checkIsValid(l) || !checkIsValid(w)){
-            ans.textContent = 'Invalid Inputs'
-            return;
-        }
-
-        if (areaOfRect(l, w)){
-            ans.textContent = 'Area of Rectangle ='+
-            return;
-        }
-        ans.textContent = 'Inputs do NOT create a valid triangle'
-    })
-
-    clearButton.addEventListener('click', function(e){
-        l.value = "";
-        w.value = "";
-        ans.textContent = "";
-        ans.classList.add("hidden");
-    })
 </script>
+
 </body>
 </html>
