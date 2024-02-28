@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .red{
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .skyblue{
+            background-color: skyblue;
+        }
+        .black{
+            background-color: black;
+        }
+        .lavender{
+            background-color: lavender;
+        }
+        .pink{
+            color: pink;
+        }
+        .teal{
+            color: teal;
+        }
+        .purple{
+            color: purple;
+        }
+        .navy{
+            color: navy;
+        }
+        .yellow{
+            color: yellow;
+        }
+        .orange{
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum nibh tellus molestie nunc. In ante metus dictum at tempor commodo. Adipiscing enim eu turpis egestas pretium. Arcu odio ut sem nulla pharetra. Lacus suspendisse faucibus interdum posuere lorem ipsum. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Aliquet bibendum enim facilisis gravida neque convallis a cras semper. Ipsum faucibus vitae aliquet nec ullamcorper. Amet venenatis urna cursus eget nunc scelerisque viverra. Nam libero justo laoreet sit amet cursus sit. Volutpat lacus laoreet non curabitur gravida arcu ac. Placerat duis ultricies lacus sed. Non nisi est sit amet. Venenatis a condimentum vitae sapien pellentesque. Diam vel quam elementum pulvinar etiam non quam. Adipiscing at in tellus integer feugiat scelerisque varius morbi. Orci dapibus ultrices in iaculis nunc sed augue lacus viverra.</p>
+        <div class="row">
+            <h3>Background</h3>
+            <button id="1">RED</button>
+            <button id="2">GREEN</button>
+            <button id="3">BLUE</button>
+            <button id="7">SKYBLUE</button>
+            <button id="8">BLACK</button>
+            <button id="9">LAVENDER</button>
+        </div>
+        <div class="row">
+            <h3>TEXT</h3>
+            <button id="4">PINK</button>
+            <button id="5">TEAL</button>
+            <button id="6">PURPLE</button>
+            <button id="10">NAVY</button>
+            <button id="11">YELLOW</button>
+            <button id="12">ORANGE</button>
+        </div>
+        <button id="clear">CLEAR</button>
+    </div>
+</div>
+<script>
+    const content = document.querySelector('.content');
+    const red = document.getElementById('1');
+    const green = document.getElementById('2')
+    const blue = document.getElementById('3')
+    const skyblue = document.getElementById('7')
+    const black = document.getElementById('8')
+    const lavender = document.getElementById('9')
+
+    const pink = document.getElementById('4')
+    const teal = document.getElementById('5')
+    const purple = document.getElementById('6')
+    const navy = document.getElementById('10')
+    const yellow = document.getElementById('11')
+    const orange = document.getElementById('12')
+
+    const clearButton = document.getElementById('clear')
+
+    red.addEventListener('click', function(e){
+        removeBGColor();
+        content.classList.add('red');
+    });
+
+    green.addEventListener('click', function(e){
+        removeBGColor();
+        content.classList.add('green');
+    });
+
+    blue.addEventListener('click', function(e){
+        removeBGColor();
+        content.classList.add('blue');
+    });
+
+    lavender.addEventListener('click', function(e){
+        removeBGColor();
+        content.classList.add('lavender');
+    });
+
+    skyblue.addEventListener('click', function(e){
+        removeBGColor();
+        content.classList.add('skyblue');
+    });
+
+    black.addEventListener('click', function(e){
+        removeBGColor();
+        content.classList.add('black');
+    });
+
+    pink.addEventListener('click', function(e){
+        removeTextColor();
+        content.classList.add('pink');
+    });
+
+    teal.addEventListener('click', function(e){
+        removeTextColor();
+        content.classList.add('teal');
+    });
+
+    purple.addEventListener('click', function(e){
+        removeTextColor();
+        content.classList.add('purple');
+    });
+
+    navy.addEventListener('click', function(e){
+        removeTextColor();
+        content.classList.add('navy');
+    });
+
+    yellow.addEventListener('click', function(e){
+        removeTextColor();
+        content.classList.add('yellow');
+    });
+
+    orange.addEventListener('click', function(e){
+        removeTextColor();
+        content.classList.add('orange');
+    });
+
+    clearButton.addEventListener('click', function(e){
+        removeBGColor();
+        removeTextColor();
+    });
+
+    function removeBGColor(){
+        content.classList.remove('red')
+        content.classList.remove('green')
+        content.classList.remove('blue')
+        content.classList.remove('skyblue')
+        content.classList.remove('black')
+        content.classList.remove('lavender')
+    }
+
+    function removeTextColor(){
+        content.classList.remove('pink')
+        content.classList.remove('teal')
+        content.classList.remove('purple')
+        content.classList.remove('navy')
+        content.classList.remove('yellow')
+        content.classList.remove('orange')
+    }
+</script>
+</body>
+</html>
