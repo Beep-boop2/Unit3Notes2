@@ -27,27 +27,28 @@ button{
                 <label for="b">Last</label>
                 <input type="text" id="b" name="last_name">
             </div>
-            <button name="hello">Say Hello</button>
-            <p class="hidden"></p>
-         </div>
+        </div>
+        <div>
+            <button id="hello">Say Hello!</button>
+        </div>
+        <div id="List">
+        </div>
     </div>
 </div>
 <script>
 
     const a = document.getElementById('a');
     const b = document.getElementById('b');
-    const ans = document.querySelector('p')
+    const list = document.getElementById('List');
     const sayHello = document.getElementById('hello');
 
-
-    }
-
     sayHello.addEventListener('click', function(e){
-        let First = +a.value;
-        let Last = +b.value;
-
-        ans.textContent = (First, Last);
-    })
+        let First = a.value;
+        let Last = b.value;
+        let p = document.createElement('p');
+        p.innerText = First + Last;
+        list.insertAdjacentElement('afterend', p);
+    });
 </script>
 </body>
 </html>
