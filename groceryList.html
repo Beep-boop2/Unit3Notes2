@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="style.css" rel="stylesheet">
+    <style>
+        button{
+            height: 30px;
+            width: 90px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h1>Grocery List</h1>
+        <div class="row">
+            <div>
+                <label for="a">Item</label>
+                <input type="text" id="a" name="Item">
+            </div>
+        </div>
+        <div>
+            <button id="newItem">Add Item!</button>
+        </div>
+        <br>
+        <div id="groceryList">
+        </div>
+    </div>
+</div>
+<script>
+
+    const a = document.getElementById('a');
+    const list = document.getElementById('groceryList');
+    const addItem = document.getElementById('newItem');
+
+    addItem.addEventListener('click', function(e){
+        let Item = a.value;
+        let li  = document.createElement('li');
+        li.innerText = Item;
+
+        list.insertAdjacentElement('afterend', li);
+
+        li.addEventListener('click', function (e){
+            li.remove();
+        });
+    });
+
+
+</script>
+</body>
+</html>
