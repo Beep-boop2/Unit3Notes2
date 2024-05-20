@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timers Practice</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <button id="trigger">Click Me!</button>
+        <p></p>
+        <div id="box">
+            <button id="interval">Repeat</button>
+
+            <button id="cancel">Cancel Repeat</button>
+        </div>
+        <p></p>
+    </div>
+</div>
+
+<script>
+    const myButton = document.getElementById('trigger');
+    const repeatButton = document.getElementById("interval");
+    const cancelButton = document.getElementById("cancel");
+    const box = document.getElementById('box')
+
+    let color = ['skyblue', 'red', 'gray', 'darkblue', 'navy' ];
+
+    let interval;
+
+
+    function randomColor(){
+        return color[Math.floor(Math.random()*color.length)]
+    }
+
+    myButton.addEventListener('click', function (){
+        setTimeout(function (){
+            myButton.remove();
+        }, 3000);
+    })
+
+    repeatButton.addEventListener('click', function (){
+        if (!interval) {
+            interval = setInterval(function () {
+            box.style.backgroundColor = randomColor();
+            }, 5000);
+        }
+    });
+
+    cancelButton.addEventListener('click', function (){
+        if (interval){
+            clearInterval(interval);
+            interval = null;
+        }
+    });
+
+</script>
+</body>
+</html>

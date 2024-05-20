@@ -1,0 +1,21 @@
+body{
+    background-color: #374151;
+}
+input{
+    background-color: black;
+    color:antiquewhite;
+    border-color: black;
+}
+p{
+    color:antiquewhite;
+}
+label{
+    color:antiquewhite;
+}
+
+button{
+    margin-left: 75px;
+}
+.row{
+    display: flex;
+}

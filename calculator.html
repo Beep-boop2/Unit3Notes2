@@ -3,29 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Calculator</title>
-    <style>
-        body{
-            background-color: #374151;
-        }
-        input{
-            background-color: black;
-            color:antiquewhite;
-            border-color: black;
-        }
-        p{
-            color:antiquewhite;
-        }
-        label{
-            color:antiquewhite;
-        }
-
-    </style>
+    <link href="calcCSS.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
     <div class="content">
         <h1>Calculator</h1>
-        <div class="row">
+        <div>
             <div>
                 <label for="a">Number 1</label>
                 <input type="text" id="a" name="number_1">
@@ -43,16 +27,23 @@
             <option value="div" name="container">Divide</option>
             <option value="mod" name="container">Modulo</option>
         </select>
-        <div>
+        <div class="row">
             <br>
             <button id="calc">Calculate</button>
+        </div>
+        <div class="row">
+            <br>
             <button id="clear">Clear</button>
+        </div>
+        <div class="row">
+            <br>
+            <button id="reset_history">Reset History</button>
         </div>
         <br>
         <div id="history_list">
         </div>
         <div>
-            <button id="reset_history">Reset History</button>
+
         </div>
 </div>
 </div>
